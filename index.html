@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Purple Pilates — Install the App</title>
+
+        <!-- ============================================== -->
+        <!--   👇  REPLACE THIS LINK WITH YOUR APK URL  👇   -->
+        <!-- ============================================== -->
+        <script>
+            const APK_DOWNLOAD_URL = "https://drive.google.com/file/d/1l0SkCmYSrEnRUzqENReHmvXtS-JmvsOM/view?usp=sharing";
+            const APP_NAME = "Purple Pilates";
+            const APP_VERSION = "1.0";
+        </script>
+        <!-- ============================================== -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            :root {
+                /* Dusty lavender palette pulled from the Purple Pilates logo */
+                --purple-900: #4a4060; /* deep wordmark */
+                --purple-700: #6f6588; /* secondary text accent */
+                --purple-500: #9c92b8; /* logo lavender */
+                --purple-400: #b6abce;
+                --purple-300: #cdc4de;
+                --purple-200: #ddd4ea;
+                --purple-100: #ece6f3;
+                --purple-50: #f5f1f8;
+                --cream: #f6f4f0; /* matches logo background */
+                --ink: #2c2438;
+                --ink-soft: #5e5470;
+                --ink-mute: #968ba8;
+                --line: #e6dfee;
+                --green: #1f9d55;
+                --warn-bg: #fbf6e8;
+                --warn-fg: #7a5400;
+                --warn-line: #ead7a0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family:
+                    "DM Sans",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    sans-serif;
+                background: var(--cream);
+                color: var(--ink);
+                -webkit-font-smoothing: antialiased;
+                line-height: 1.55;
+                font-size: 17px;
+            }
+
+            /* Soft bg pattern */
+            body::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                background:
+                    radial-gradient(
+                        ellipse 60% 40% at 80% -10%,
+                        rgba(156, 146, 184, 0.16),
+                        transparent 60%
+                    ),
+                    radial-gradient(
+                        ellipse 50% 30% at -10% 110%,
+                        rgba(156, 146, 184, 0.12),
+                        transparent 60%
+                    );
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            .wrap {
+                position: relative;
+                z-index: 1;
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 32px 22px 80px;
+            }
+
+            /* ----- HERO ----- */
+            .hero {
+                text-align: center;
+                padding: 32px 8px 8px;
+            }
+
+            .logo-mark {
+                display: block;
+                width: 260px;
+                max-width: 78%;
+                height: auto;
+                margin: 0 auto 24px;
+            }
+
+            .eyebrow {
+                display: inline-block;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--purple-700);
+                background: var(--purple-100);
+                padding: 6px 14px;
+                border-radius: 999px;
+                margin-bottom: 16px;
+            }
+
+            h1 {
+                font-family: "Fraunces", serif;
+                font-weight: 500;
+                font-size: clamp(36px, 7vw, 52px);
+                line-height: 1.05;
+                letter-spacing: -0.02em;
+                margin: 0 0 14px;
+                color: var(--purple-900);
+                text-wrap: balance;
+            }
+
+            .lead {
+                font-size: 18px;
+                color: var(--ink-soft);
+                margin: 0 auto 28px;
+                max-width: 480px;
+                text-wrap: pretty;
+            }
+
+            /* ----- PRIMARY DOWNLOAD BUTTON ----- */
+            .download-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 14px;
+                background: linear-gradient(180deg, #a8a0c2, #6f6588);
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 19px;
+                padding: 20px 36px;
+                border-radius: 999px;
+                box-shadow:
+                    0 14px 30px -10px rgba(74, 64, 96, 0.45),
+                    0 2px 0 rgba(255, 255, 255, 0.18) inset;
+                transition:
+                    transform 0.15s ease,
+                    box-shadow 0.15s ease;
+                border: none;
+                cursor: pointer;
+            }
+            .download-btn:hover {
+                transform: translateY(-2px);
+                box-shadow:
+                    0 20px 36px -10px rgba(74, 64, 96, 0.55),
+                    0 2px 0 rgba(255, 255, 255, 0.18) inset;
+            }
+            .download-btn:active {
+                transform: translateY(0);
+            }
+
+            .download-btn svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .btn-meta {
+                margin-top: 14px;
+                font-size: 14px;
+                color: var(--ink-mute);
+            }
+
+            /* ----- DIVIDER ----- */
+            .divider {
+                margin: 56px 0 32px;
+                text-align: center;
+                position: relative;
+            }
+            .divider::before {
+                content: "";
+                position: absolute;
+                left: 10%;
+                right: 10%;
+                top: 50%;
+                height: 1px;
+                background: var(--line);
+            }
+            .divider span {
+                position: relative;
+                background: var(--cream);
+                padding: 0 18px;
+                font-family: "Fraunces", serif;
+                font-style: italic;
+                font-size: 18px;
+                color: var(--ink-soft);
+            }
+
+            /* ----- STEPS ----- */
+            .steps-title {
+                text-align: center;
+                font-family: "Fraunces", serif;
+                font-weight: 500;
+                font-size: 30px;
+                letter-spacing: -0.01em;
+                color: var(--purple-900);
+                margin: 0 0 8px;
+            }
+            .steps-sub {
+                text-align: center;
+                color: var(--ink-soft);
+                margin: 0 0 36px;
+                font-size: 16px;
+            }
+
+            .steps {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .step {
+                background: white;
+                border: 1px solid var(--line);
+                border-radius: 22px;
+                padding: 24px 24px 24px 22px;
+                display: grid;
+                grid-template-columns: 56px 1fr;
+                gap: 18px;
+                align-items: start;
+                box-shadow:
+                    0 1px 0 rgba(74, 64, 96, 0.03),
+                    0 8px 24px -16px rgba(74, 64, 96, 0.14);
+            }
+
+            .step-num {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: var(--purple-100);
+                color: var(--purple-700);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "Fraunces", serif;
+                font-weight: 600;
+                font-size: 22px;
+            }
+
+            .step-body h3 {
+                margin: 6px 0 6px;
+                font-size: 19px;
+                font-weight: 600;
+                color: var(--ink);
+                letter-spacing: -0.01em;
+            }
+            .step-body p {
+                margin: 0;
+                color: var(--ink-soft);
+                font-size: 16px;
+            }
+            .step-body p + p {
+                margin-top: 8px;
+            }
+
+            /* ----- WARNING PREVIEW (the "may be harmful" reassurance) ----- */
+            .warning-card {
+                background: var(--warn-bg);
+                border: 1px solid var(--warn-line);
+                border-radius: 18px;
+                padding: 18px 18px 18px 20px;
+                margin-top: 14px;
+                display: grid;
+                grid-template-columns: 24px 1fr;
+                gap: 14px;
+                align-items: start;
+            }
+            .warning-card svg {
+                width: 24px;
+                height: 24px;
+                color: var(--warn-fg);
+                flex-shrink: 0;
+            }
+            .warning-card p {
+                margin: 0;
+                color: var(--warn-fg);
+                font-size: 15px;
+                line-height: 1.5;
+            }
+            .warning-card strong {
+                color: #6b4500;
+            }
+
+            /* mini phone mockup of the actual warning */
+            .phone-preview {
+                margin-top: 18px;
+                background: #f0f0f0;
+                border-radius: 18px;
+                padding: 14px;
+                border: 1px solid var(--line);
+            }
+            .phone-preview-inner {
+                background: white;
+                border-radius: 12px;
+                padding: 18px 16px 16px;
+                text-align: center;
+            }
+            .phone-preview-icon {
+                width: 44px;
+                height: 44px;
+                margin: 0 auto 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .phone-preview h4 {
+                margin: 0 0 6px;
+                font-size: 17px;
+                color: #333;
+                font-weight: 600;
+            }
+            .phone-preview .pp-body {
+                font-size: 13px;
+                color: #666;
+                margin: 0 0 14px;
+                line-height: 1.4;
+            }
+            .pp-btn {
+                display: block;
+                background: #d9d9d9;
+                color: #888;
+                padding: 11px;
+                border-radius: 999px;
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+            .pp-link {
+                color: var(--green);
+                font-size: 14px;
+                font-weight: 600;
+                padding: 8px;
+                position: relative;
+            }
+            .pp-link::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: -2px;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 36px;
+                border: 3px solid var(--purple-500);
+                border-radius: 22px;
+                box-shadow: 0 0 0 4px rgba(156, 146, 184, 0.28);
+                pointer-events: none;
+            }
+            .pp-arrow {
+                display: block;
+                margin: 16px auto 0;
+                width: 28px;
+                color: var(--purple-500);
+            }
+            .tap-this {
+                margin-top: 10px;
+                text-align: center;
+                font-family: "Fraunces", serif;
+                font-style: italic;
+                color: var(--purple-700);
+                font-size: 16px;
+            }
+
+            /* ----- FAQ ----- */
+            .faq {
+                margin-top: 48px;
+            }
+            .faq-title {
+                font-family: "Fraunces", serif;
+                font-weight: 500;
+                font-size: 26px;
+                color: var(--purple-900);
+                text-align: center;
+                margin: 0 0 24px;
+                letter-spacing: -0.01em;
+            }
+            details {
+                background: white;
+                border: 1px solid var(--line);
+                border-radius: 14px;
+                padding: 0;
+                margin-bottom: 10px;
+                overflow: hidden;
+            }
+            details[open] {
+                box-shadow: 0 8px 20px -14px rgba(74, 64, 96, 0.18);
+            }
+            summary {
+                list-style: none;
+                cursor: pointer;
+                padding: 16px 20px;
+                font-weight: 500;
+                color: var(--ink);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 16px;
+                font-size: 16px;
+            }
+            summary::-webkit-details-marker {
+                display: none;
+            }
+            summary::after {
+                content: "+";
+                font-size: 22px;
+                color: var(--purple-500);
+                font-weight: 400;
+                transition: transform 0.2s;
+            }
+            details[open] summary::after {
+                content: "−";
+            }
+            details > div {
+                padding: 0 20px 18px;
+                color: var(--ink-soft);
+                font-size: 15.5px;
+                line-height: 1.6;
+            }
+
+            /* ----- HELP FOOTER ----- */
+            .help {
+                margin-top: 56px;
+                text-align: center;
+                padding: 32px 24px;
+                background: var(--purple-50);
+                border-radius: 22px;
+                border: 1px solid var(--purple-100);
+            }
+            .help h3 {
+                font-family: "Fraunces", serif;
+                font-weight: 500;
+                font-size: 22px;
+                margin: 0 0 8px;
+                color: var(--purple-900);
+            }
+            .help p {
+                margin: 0;
+                color: var(--ink-soft);
+                font-size: 15.5px;
+            }
+
+            .whatsapp-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                margin-top: 20px;
+                background: #25d366;
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 17px;
+                padding: 16px 28px;
+                border-radius: 999px;
+                box-shadow:
+                    0 12px 26px -10px rgba(37, 211, 102, 0.55),
+                    0 2px 0 rgba(255, 255, 255, 0.18) inset;
+                transition:
+                    transform 0.15s ease,
+                    box-shadow 0.15s ease;
+            }
+            .whatsapp-btn:hover {
+                transform: translateY(-2px);
+                background: #1fbe5a;
+                box-shadow:
+                    0 18px 32px -10px rgba(37, 211, 102, 0.6),
+                    0 2px 0 rgba(255, 255, 255, 0.18) inset;
+            }
+            .whatsapp-btn svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .whatsapp-num {
+                margin-top: 12px !important;
+                font-size: 14px !important;
+                color: var(--ink-mute) !important;
+                font-variant-numeric: tabular-nums;
+                letter-spacing: 0.02em;
+            }
+
+            footer {
+                text-align: center;
+                margin-top: 40px;
+                color: var(--ink-mute);
+                font-size: 13px;
+            }
+            footer .heart {
+                color: var(--purple-500);
+            }
+
+            @media (max-width: 480px) {
+                .wrap {
+                    padding: 20px 16px 60px;
+                }
+                .step {
+                    padding: 20px 18px;
+                    grid-template-columns: 44px 1fr;
+                    gap: 14px;
+                }
+                .step-num {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 19px;
+                }
+                .download-btn {
+                    padding: 18px 28px;
+                    font-size: 17px;
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <!-- HERO -->
+            <section class="hero">
+                <img
+                    class="logo-mark"
+                    src="assets/purple-pilates-logo.jpeg"
+                    alt="Purple Pilates"
+                />
+                <span class="eyebrow">Android Early Access</span>
+                <h1 id="app-title">The app is ready for you</h1>
+                <p class="lead">
+                    Our app is on its way to the Google Play Store. While you
+                    wait, you can install it directly on your phone right now
+                    &mdash; it only takes a minute.
+                </p>
+
+                <a id="download-link" class="download-btn" href="#" download>
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M12 3v13" />
+                        <path d="m6 11 6 6 6-6" />
+                        <path d="M5 21h14" />
+                    </svg>
+                    <span>Download the app</span>
+                </a>
+
+                <div class="btn-meta">
+                    <span id="version-meta"
+                        >Version 1.0 · Android only · ~25 MB</span
+                    >
+                </div>
+            </section>
+
+            <div class="divider">
+                <span>How to install — in 3 easy steps</span>
+            </div>
+
+            <!-- STEPS -->
+            <h2 class="steps-title" style="display: none">How to install</h2>
+
+            <div class="steps">
+                <!-- Step 1 -->
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h3>Tap the purple download button above</h3>
+                        <p>
+                            Your phone will start downloading the app. You may
+                            see a small notification at the top of your screen
+                            when it's done.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h3>Open the file when it finishes downloading</h3>
+                        <p>
+                            Tap the notification, or open your
+                            <strong>Downloads</strong> folder and tap the file
+                            that ends in <em>.apk</em>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 — the important one -->
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <h3>If your phone shows a warning, tap "Open file"</h3>
+                        <p>
+                            Android shows this warning for every app that isn't
+                            from the Play Store yet.
+                            <strong>This is normal</strong> — your phone just
+                            wants to double-check.
+                        </p>
+
+                        <!-- Phone mockup of the warning -->
+                        <div class="phone-preview">
+                            <div class="phone-preview-inner">
+                                <div class="phone-preview-icon">
+                                    <svg
+                                        viewBox="0 0 48 48"
+                                        width="44"
+                                        height="44"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M22 6 L38 14 L38 26 C38 34 31 40 22 42 C13 40 6 34 6 26 L6 14 Z"
+                                            fill="#f4b740"
+                                            stroke="#1f1230"
+                                            stroke-width="1.5"
+                                            stroke-linejoin="round"
+                                        />
+                                        <circle
+                                            cx="22"
+                                            cy="20"
+                                            r="2"
+                                            fill="#1f1230"
+                                        />
+                                        <rect
+                                            x="20.5"
+                                            y="24"
+                                            width="3"
+                                            height="9"
+                                            rx="1.5"
+                                            fill="#1f1230"
+                                        />
+                                    </svg>
+                                </div>
+                                <h4>This file may be harmful</h4>
+                                <p class="pp-body">
+                                    Opening files from someone you don't know
+                                    can lead to scams or put your device's
+                                    safety at risk.
+                                </p>
+                                <div class="pp-btn">Cancel</div>
+                                <div class="pp-link">Open file</div>
+                                <svg
+                                    class="pp-arrow"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M12 5v14" />
+                                    <path d="m5 12 7 7 7-7" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <p class="tap-this">
+                            ↑ Tap "Open file" — that's the one you want.
+                        </p>
+
+                        <div class="warning-card">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 8v4" />
+                                <path d="M12 16h.01" />
+                            </svg>
+                            <p>
+                                <strong>Don't worry — it's safe.</strong> The
+                                warning appears because we haven't finished
+                                listing on the Play Store yet. After installing,
+                                you can open the app like any other.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 (bonus) -->
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                        <h3>Tap "Install" and you're all set ✨</h3>
+                        <p>
+                            Once installed, you'll find Purple Pilates with your
+                            other apps. Open it and sign in to start your first
+                            class.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <section class="faq">
+                <h2 class="faq-title">Common questions</h2>
+
+                <details>
+                    <summary>Is it really safe?</summary>
+                    <div>
+                        Yes. The warning is Android's standard message for any
+                        app installed outside the Play Store — it shows up even
+                        for big, trusted apps when they're shared this way. Our
+                        app is the same one that will appear on the Play Store
+                        in about two weeks.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        I can't find the downloaded file. Where is it?
+                    </summary>
+                    <div>
+                        Open the <strong>Files</strong> or
+                        <strong>My Files</strong> app on your phone, then tap
+                        <strong>Downloads</strong>. You're looking for a file
+                        with a name ending in <em>.apk</em>.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        My phone says "for your security, your phone is not
+                        allowed to install unknown apps." What do I do?
+                    </summary>
+                    <div>
+                        Tap <strong>Settings</strong> on that screen, then turn
+                        on <strong>"Allow from this source"</strong>. Go back
+                        and tap Install again. You only have to do this once.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Can I install this on an iPhone?</summary>
+                    <div>
+                        Not yet — this file is only for Android phones. The
+                        iPhone version is coming soon to the App Store.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        Will the Play Store version replace this one?
+                    </summary>
+                    <div>
+                        Yes. When the app is approved on the Play Store, you'll
+                        be able to update it from there without losing anything.
+                    </div>
+                </details>
+            </section>
+
+            <!-- HELP -->
+            <div class="help">
+                <h3>Stuck? We're here.</h3>
+                <p>
+                    Send us a WhatsApp message and we'll walk you through it
+                    personally.
+                </p>
+                <a
+                    class="whatsapp-btn"
+                    href="https://wa.me/918660737892?text=Hi!%20I%20need%20help%20installing%20the%20Purple%20Pilates%20app."
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <svg
+                        viewBox="0 0 32 32"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M16.003 3C9.374 3 4 8.373 4 14.999c0 2.367.69 4.572 1.879 6.43L4 29l7.77-1.84a11.94 11.94 0 0 0 4.232.77h.003c6.628 0 12.003-5.373 12.003-12C28.008 8.373 22.633 3 16.003 3Zm0 21.84h-.002a9.94 9.94 0 0 1-3.806-.74l-.273-.108-4.612 1.092 1.122-4.495-.178-.288a9.913 9.913 0 0 1-1.522-5.302c0-5.487 4.467-9.953 9.97-9.953 2.664 0 5.166 1.038 7.046 2.918a9.876 9.876 0 0 1 2.92 7.043c0 5.487-4.466 9.953-9.965 9.953Zm5.466-7.456c-.3-.15-1.77-.873-2.044-.972-.274-.1-.473-.15-.672.15-.2.298-.772.972-.946 1.171-.174.2-.348.224-.647.075-.298-.15-1.262-.465-2.405-1.485-.889-.793-1.49-1.773-1.664-2.072-.175-.298-.019-.46.131-.608.135-.135.3-.348.448-.523.15-.174.2-.298.299-.497.1-.2.05-.373-.025-.523-.075-.15-.672-1.62-.92-2.218-.243-.583-.49-.504-.673-.513l-.572-.01a1.097 1.097 0 0 0-.797.373c-.273.299-1.045 1.022-1.045 2.491 0 1.47 1.07 2.89 1.22 3.089.149.2 2.105 3.213 5.1 4.506.713.308 1.27.491 1.704.629.715.227 1.366.195 1.881.118.574-.085 1.77-.722 2.02-1.42.247-.697.247-1.296.173-1.42-.075-.124-.274-.198-.572-.347Z"
+                        />
+                    </svg>
+                    <span>Message us on WhatsApp</span>
+                </a>
+                <p class="whatsapp-num">+91 86607 37892</p>
+            </div>
+
+            <footer>
+                Made with <span class="heart">♥</span> for our Purple Pilates
+                community
+            </footer>
+        </div>
+
+        <script>
+            // Wire up the download link and meta from the constants at the top
+            document.getElementById("download-link").href = APK_DOWNLOAD_URL;
+            document.getElementById("app-title").textContent =
+                `The ${APP_NAME} app is ready for you`;
+            document.title = `${APP_NAME} — Install the App`;
+            document.getElementById("version-meta").textContent =
+                `Version ${APP_VERSION} · Android only · For phones running Android 8 or newer`;
+        </script>
+    </body>
+</html>
